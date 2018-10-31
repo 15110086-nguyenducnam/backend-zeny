@@ -1,0 +1,30 @@
+
+<div class="sign_up_form">
+  <div class="container">
+    <div class="col-lg-5 col-md-7 col-10 m-auto">
+      <div class="card">
+        <div class="card-body pt-5 px-4 mx-2">
+          <h1 class="text-register d-none d-sm-block">Change your password</h1>
+          <h1 class="text-register d-sm-none">Register Kryptos-X</h1>
+          <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+          <%= f.input :reset_password_token, as: :hidden %>
+          <%= f.full_error :reset_password_token %>
+          <div class="form-inputs">
+            <%= f.input :password,
+                          label: "New password",
+                          required: false,
+                          autofocus: true,
+                          hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                          input_html: { autocomplete: "new-password" } %>
+            <%= f.input :password_confirmation, label: "Confirm your new password", required: false %>
+          </div>
+          <div class="form-actions">
+            <%= f.button :submit, "Reset password", class: "btn-regis w-100 pl-0", id: "button-submit" %>
+          </div>
+          <%= render "admins/shared/links" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
