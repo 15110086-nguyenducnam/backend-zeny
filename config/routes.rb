@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :khachhangs
   root "rails_admin/main#dashboard"
   mount BackEnd::Base => "/"
   devise_for :admins, controllers: {  sessions: 'admins/sessions',

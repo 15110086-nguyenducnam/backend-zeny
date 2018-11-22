@@ -28,9 +28,13 @@ class Sanpham < ApplicationRecord
     field :loaisp do
       label "Loại SP"
     end
-    field :thongso
+    field :thongso do
+      label "Thông số"
+    end
     field :photos
-    field :mota, :ck_editor
+    field :mota, :ck_editor do
+      label "Mô tả"
+    end
     field :created_at do
       read_only true
     end
