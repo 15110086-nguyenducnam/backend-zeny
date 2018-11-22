@@ -10,6 +10,7 @@ class Loaikh < ApplicationRecord
     "#{self.tenloaikh}"
   end
   rails_admin do
+    label "Loại khách hàng"
     label_plural "Loại khách hàng"
     field :id do
       read_only true

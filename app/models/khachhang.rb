@@ -5,13 +5,14 @@ class Khachhang < ApplicationRecord
 
   # association
   validates :loaikh, :email, :diachi, :ho, :ten, :sdt, presence: true
-  validates :trangthaihd, presence: true, numericality: true
+  # validates :trangthaihd, presence: true, numericality: true
 
   # rails_admin
   def display_name
     "#{self.ho} #{self.ten}"
   end
   rails_admin do
+    label "Khách hàng"
     label_plural "Khách hàng"
     field :id do
       read_only true

@@ -13,6 +13,7 @@ class Chitiethdcc < ApplicationRecord
   #   "#{self.dongia}"
   # end
   rails_admin do
+    label "Chi tiết hợp đồng cung cấp"
     label_plural "Chi tiết hợp đồng cung cấp"
     
     field :id do

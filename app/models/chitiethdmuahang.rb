@@ -4,11 +4,12 @@ class Chitiethdmuahang < ApplicationRecord
   belongs_to :hopdongmuahang
 
   # validate
-  validates :sanpham, :hopdongmuahang, presence: true
+  validates :sanpham, presence: true
   validates :dongia, :dongia, presence: true, numericality: true
 
   #rails admin 
   rails_admin do
+    label "Chi tiết hợp đồng mua hàng"
     label_plural "Chi tiết hợp đồng mua hàng"
     field :id do
       read_only true

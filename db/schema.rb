@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_29_024959) do
+ActiveRecord::Schema.define(version: 2018_11_22_031026) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -98,12 +98,20 @@ ActiveRecord::Schema.define(version: 2018_10_29_024959) do
     t.string "ten"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "nhanhieu_id"
+    t.index ["nhanhieu_id"], name: "index_loaisps_on_nhanhieu_id"
   end
 
   create_table "nhaccs", force: :cascade do |t|
     t.string "tennhacc"
     t.string "diachi"
     t.integer "sdt"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "nhanhieus", force: :cascade do |t|
+    t.string "ten"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -125,6 +133,7 @@ ActiveRecord::Schema.define(version: 2018_10_29_024959) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "mota"
+    t.text "thongso"
     t.index ["loaisp_id"], name: "index_sanphams_on_loaisp_id"
   end
 
@@ -136,6 +145,7 @@ ActiveRecord::Schema.define(version: 2018_10_29_024959) do
   add_foreign_key "hopdongccs", "nhaccs"
   add_foreign_key "hopdongmuahangs", "khachhangs"
   add_foreign_key "khachhangs", "loaikhs"
+  add_foreign_key "loaisps", "nhanhieus"
   add_foreign_key "photos", "sanphams"
   add_foreign_key "sanphams", "loaisps"
 end

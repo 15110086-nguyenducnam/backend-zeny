@@ -17,6 +17,7 @@ class Sanpham < ApplicationRecord
     "#{self.tensp}"
   end
   rails_admin do
+    label "Sản phẩm"
     label_plural "Sản phẩm"
     field :id do
       read_only true
@@ -27,6 +28,7 @@ class Sanpham < ApplicationRecord
     field :loaisp do
       label "Loại SP"
     end
+    field :thongso
     field :photos
     field :mota, :ck_editor
     field :created_at do
@@ -35,6 +37,8 @@ class Sanpham < ApplicationRecord
     field :updated_at do
       read_only true
     end
-
+    # show do
+    #   label_plural "Sản phẩm"
+    # end
   end
 end

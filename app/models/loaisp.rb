@@ -1,6 +1,7 @@
 class Loaisp < ApplicationRecord
   # association
   has_many :sanphams, inverse_of: :loaisp
+  belongs_to :nhanhieu
   
   # validate
   validates :ten, presence: true
@@ -10,17 +11,18 @@ class Loaisp < ApplicationRecord
   end
   rails_admin do
     label_plural "Loại sản phẩm"
+    label "Loại sản phẩm"
     field :id do
       read_only true
     end
     field :ten do
-      label "Tên"
+      label "Tên loại SP"
+    end
+    field :nhanhieu do
+      label "Tên nhãn hiệu"
     end
     field :sanphams do
       label "Sản phẩm"
-      #  enum do
-      #   self.sanphams.collect {|p| [p.ten, p.id]}
-      # end
     end
     field :created_at do
       read_only true

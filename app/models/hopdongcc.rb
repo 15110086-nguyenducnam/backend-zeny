@@ -13,6 +13,7 @@ class Hopdongcc < ApplicationRecord
     "#{self.tenhdcc}"
   end
   rails_admin do
+    label "Hợp đồng cung cấp"
     label_plural "Hợp đồng cung cấp"
     field :id do
       read_only true

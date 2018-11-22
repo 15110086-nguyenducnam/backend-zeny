@@ -1,21 +1,23 @@
-
 <div class="sign_up_form">  
   <div class="container" >
     <div class="col-lg-5 col-md-7 col-10 m-auto">
       <div class="card">
         <div class="card-body pt-5 px-4 mx-2">
           <h1 class="text-register d-none d-sm-block">Admin</h1>
-          <h1 class="text-register d-sm-none">Register Kryptos-X</h1>
           <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <div class="form-inputs">
+              <% flash.each do |name, msg| %>
+                <%= content_tag :div, msg, id: "flash_#{name}" if msg.is_a?(String) %>
+              <%end%>
               <%= f.input :email,
+                error: 'Username is mandatory, please specify one',
                 required: false,
                 autofocus: true,
                 input_html: { autocomplete: "email" } %>
               <%= f.input :password,
                           required: false,
+                          autofocus: true,
                           input_html: { autocomplete: "current-password" } %>
-
             </div>
             <div class="form-actions">
               <%= f.button :submit, "Log in", class: "btn-regis w-100 pl-0", id: "button-submit" %>

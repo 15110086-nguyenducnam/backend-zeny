@@ -30,11 +30,11 @@ class Admins::PasswordsController < Devise::PasswordsController
   # end
 
 
-  # The path used after sending reset password instructions
-  def after_sending_reset_password_instructions_path_for(resource_name)
-    # super(resource_name)
-    # static_pages_reset_password_path and return
-    "/static_pages/reset_password"
-  end
+  # # The path used after sending reset password instructions
+  # def after_sending_reset_password_instructions_path_for(resource_name)
+  #   # super(resource_name)
+  #   # static_pages_reset_password_path and return
+  #   # "/static_pages/reset_password"
+  # end
 
 end

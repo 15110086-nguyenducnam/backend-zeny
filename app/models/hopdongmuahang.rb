@@ -13,6 +13,7 @@ class Hopdongmuahang < ApplicationRecord
     "#{self.trangthaihd}"
   end
   rails_admin do
+    label "Hợp đồng mua hàng"
     label_plural "Hợp đồng mua hàng"
     field :id do
       read_only true

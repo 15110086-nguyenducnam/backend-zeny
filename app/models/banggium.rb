@@ -7,6 +7,7 @@ class Banggium < ApplicationRecord
 
   #rails_admin
   rails_admin do
+    label "Bảng giá"
     label_plural "Bảng giá"
     
     field :id do
