@@ -1,11 +1,12 @@
 module BackEnd::Entities
   class Sanpham < Grape::Entity
+    root "sanphams", "sanpham"
     expose :id
     expose :tensp
     # expose :thongso
     expose :mota
     expose :photos, using: BackEnd::Entities::Photo
-    expose :banggium, using: BackEnd::Entities::Banggium do |gia, opts|
+    expose :banggium, as: :gia, using: BackEnd::Entities::Banggium do |gia, opts|
       gia.banggium.last
     end
 

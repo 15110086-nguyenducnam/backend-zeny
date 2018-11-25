@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_22_072514) do
+ActiveRecord::Schema.define(version: 2018_11_23_042307) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,14 @@ ActiveRecord::Schema.define(version: 2018_11_22_072514) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "api_keys", force: :cascade do |t|
+    t.text "token"
+    t.bigint "khachhang_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["khachhang_id"], name: "index_api_keys_on_khachhang_id"
   end
 
   create_table "banggia", force: :cascade do |t|
@@ -143,6 +151,7 @@ ActiveRecord::Schema.define(version: 2018_11_22_072514) do
     t.index ["loaisp_id"], name: "index_sanphams_on_loaisp_id"
   end
 
+  add_foreign_key "api_keys", "khachhangs"
   add_foreign_key "banggia", "sanphams"
   add_foreign_key "chitiethdccs", "hopdongccs"
   add_foreign_key "chitiethdccs", "sanphams"

@@ -6,6 +6,7 @@ class Khachhang < ApplicationRecord
   # accosiation
   belongs_to :loaikh, inverse_of: :khachhangs
   has_many :hopdongmuahangs
+  has_many :api_keys
 
   # association
   validates :loaikh, :email, :diachi, :ho, :ten, :sdt, presence: true

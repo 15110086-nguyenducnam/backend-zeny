@@ -7,13 +7,25 @@ module BackEnd::V1
       desc 'Return list of Loai san pham'
       get do
         loaisps = Loaisp.all
-        present loaisps, with: BackEnd::Entities::Loaisp
+        if loaisps.present?
+          present :status, true
+          present loaisps, with: BackEnd::Entities::Loaisp
+        else
+          present :status, false
+          present :message, "Không tìm thấy loại sản phẩm"
+        end
       end
-      desc 'Return a specific sanpham'
+      desc 'Return a specific sanpham through id loaisp'
       route_param :id do
         get do
           loaisp = Loaisp.find(params[:id]).sanphams
-          present loaisp, with: BackEnd::Entities::Sanpham
+          if loaisp.present?
+            present :status, true
+            present loaisp, with: BackEnd::Entities::Sanpham
+          else
+            present :status, false
+            present :message, "Không tìm thấy sản phẩm với loại sản phẩm tr"
+          end
         end
       end
     end
