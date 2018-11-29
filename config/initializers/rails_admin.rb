@@ -7,6 +7,10 @@ RailsAdmin.config do |config|
     warden.authenticate! scope: :admin
   end
   config.current_user_method(&:current_admin)
+  config.navigation_static_label = "My Links"
+  config.navigation_static_links = {
+    'Google' => 'http://www.google.com'
+  }
 
   ## == Cancan ==
   # config.authorize_with :cancan
@@ -31,7 +35,9 @@ RailsAdmin.config do |config|
     bulk_delete
     show
     edit
-    delete
+    delete do
+      except ["Admin"]
+    end
     show_in_app
 
     ## With an audit adapter, you can add:

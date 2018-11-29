@@ -3,6 +3,10 @@ class ApiKey < ApplicationRecord
   
   before_save :generate_token
 
+  rails_admin do
+    visible false
+  end
+
   private
     def generate_token
       loop do
