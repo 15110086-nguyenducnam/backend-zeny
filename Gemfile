@@ -45,6 +45,7 @@ gem 'bootstrap-glyphicons'
 gem 'rails_admin'
 gem "paperclip"
 gem 'ckeditor'
+gem "figaro"
 # API
 gem 'grape'
 gem 'grape-entity'

@@ -80,6 +80,11 @@ test:
 #
 production:
   <<: *default
+  # encoding: utf8
+  encoding: utf8
+  pool: 5
+  host: 35.234.10.229
   database: back-end_production
-  username: back-end
+  username: postgres
+  # password: 123456
   password: <%= ENV['BACK-END_DATABASE_PASSWORD'] %>

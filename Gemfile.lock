@@ -109,6 +109,8 @@ GEM
     erubi (1.7.1)
     execjs (2.7.0)
     ffi (1.9.25)
+    figaro (1.1.1)
+      thor (~> 0.14)
     font-awesome-rails (4.7.0.4)
       railties (>= 3.2, < 6.0)
     globalid (0.4.1)
@@ -334,6 +336,7 @@ DEPENDENCIES
   ckeditor
   coffee-rails (~> 4.2)
   devise (~> 4.4, >= 4.4.1)
+  figaro
   font-awesome-rails
   grape
   grape-entity
@@ -365,4 +368,4 @@ RUBY VERSION
    ruby 2.5.1p57
 
 BUNDLED WITH
-   1.16.2
+   1.17.1

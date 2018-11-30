@@ -4,11 +4,9 @@
       <div class="card">
         <div class="card-body pt-5 px-4 mx-2">
           <h1 class="text-register d-none d-sm-block">Admin</h1>
+            <%= render "admins/shared/flash_message"%>
           <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <div class="form-inputs">
-              <% flash.each do |name, msg| %>
-                <%= content_tag :div, msg, id: "flash_#{name}" if msg.is_a?(String) %>
-              <%end%>
               <%= f.input :email,
                 error: 'Username is mandatory, please specify one',
                 required: false,
