@@ -86,5 +86,4 @@ production:
   host: 35.234.10.229
   database: back-end_production
   username: postgres
-  # password: 123456
   password: <%= ENV['BACK-END_DATABASE_PASSWORD'] %>
