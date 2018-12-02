@@ -83,7 +83,8 @@ production:
   # encoding: utf8
   encoding: utf8
   pool: 5
-  host: 35.234.10.229
+  host: 35.201.214.97
   database: back-end_production
   username: postgres
-  password: <%= ENV['BACK-END_DATABASE_PASSWORD'] %>
+  password: 123456
+  # password: <%= ENV['BACK-END_DATABASE_PASSWORD'] %>
