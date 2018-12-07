@@ -1,0 +1,74 @@
+<div class="wrapper" id="views-admin-dashboard-index">
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header"> 
+      <a href = / > 
+        <img src="/assets/home/logo-f2b22b214f22873935ec8899166b4ce0d1de8334b214641d5a6e79279dfa5206.png" />
+    </div>
+    <ul class="list-unstyled components">
+      <li class="active">
+        <a href="/admin/dashboard">Product</a>
+      </li>
+      <li> <a href=/admin/categories >Brands</li>
+      <li><a href="#">Users</a></li>
+      <li><a href="#">Portfolio</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+  <div id="content">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <button class="btn btn-info" id="sidebarCollapse" type="button">
+          <i class="fa fa-align-justify"></i>
+          <span>Toggle Sidebar</span>
+        </button>
+        <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="btn btn-dark d-inline-block d-lg-none ml-auto" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+          <i class="fas fa-align-justify"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item activeroute"> 
+              <a class="nav-link" href= / > 
+              <i class="fa fa-home"></i> Home
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" rel="nofollow" data-method="delete" href="/users/sign_out">
+                <i class="fa-sign-out"></i> Logout 
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <h2>Product</h2>
+    <a class="btn btn-outline-success" href="/admin/products/new">
+      <i class="fa fa-plus"></i> Add 
+    </a>
+    <div id="product-list">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Option</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <img width="50px" height="50px" src="/uploads/product/image/1/purple_lilac_leaves_2560x1600.jpg" />
+            </td>
+            <td>nguyen</td>
+            <td>$ 34.0</td>
+            <td>dep</td>
+            <td>
+              <a class="btn btn-outline-info" href="/admin/products/1">Edit</a>
+               <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#myModalXoa" data-masp= nguyen data-mass=1 >Delete
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

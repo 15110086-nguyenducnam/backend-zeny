@@ -83,7 +83,7 @@ production:
   # encoding: utf8
   encoding: utf8
   pool: 5
-  host: 35.201.214.97
+  host: 35.221.237.228
   database: back-end_production
   username: postgres
   password: 123456
