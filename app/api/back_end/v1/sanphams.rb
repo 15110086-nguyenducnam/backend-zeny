@@ -24,7 +24,7 @@ module BackEnd::V1
             present sanpham, with: BackEnd::Entities::Sanpham
           else
             present :status, false
-            present :message, "Không tìm thấy sản ph"
+            present :message, "Không tìm thấy sản pham"
           end
         end
       end

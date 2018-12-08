@@ -353,6 +353,7 @@ DEPENDENCIES
   font-awesome-rails
   grape
   grape-entity
+  grape-rails-routes
   grape-swagger (~> 0.26.1)
   grape-swagger-rails (~> 0.3.0)
   grape_on_rails_routes
