@@ -5,8 +5,9 @@ class Hopdongcc < ApplicationRecord
   has_many :sanphams, through: :chitiethdccs
 
   #validate 
-  validates :trangthaihd, presence: true, numericality: true
+  validates :trangthaihd, presence: true
   validates :tenhdcc, presence:true
+  enum trangthaihd: [:pending, :accept]
   
   # rails_amin
   def display_name

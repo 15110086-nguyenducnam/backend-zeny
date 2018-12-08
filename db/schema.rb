@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_23_042307) do
+ActiveRecord::Schema.define(version: 2018_12_07_160638) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 2018_11_23_042307) do
   end
 
   create_table "hopdongccs", force: :cascade do |t|
-    t.integer "trangthaihd"
+    t.integer "trangthaihd", default: 0, null: false
     t.bigint "nhacc_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(version: 2018_11_23_042307) do
   end
 
   create_table "hopdongmuahangs", force: :cascade do |t|
-    t.integer "trangthaihd"
+    t.integer "trangthaihd", default: 0, null: false
     t.bigint "khachhang_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

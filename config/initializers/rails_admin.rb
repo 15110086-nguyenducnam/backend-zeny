@@ -9,7 +9,7 @@ RailsAdmin.config do |config|
   config.current_user_method(&:current_admin)
   config.navigation_static_label = "My Links"
   config.navigation_static_links = {
-    'Google' => 'http://www.google.com'
+    'Manage' => '/manage'
   }
 
   ## == Cancan ==

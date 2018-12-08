@@ -7,6 +7,7 @@ module BackEnd
   mount BackEnd::V1::Loaisps
   mount BackEnd::V1::Auths
   mount BackEnd::V1::Khachhangs
+  mount BackEnd::V1::Donhangs
   # mount BackEnd::V1::Nhaccs
  end
 end

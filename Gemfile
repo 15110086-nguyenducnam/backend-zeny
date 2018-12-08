@@ -46,6 +46,7 @@ gem 'rails_admin'
 gem "paperclip"
 gem 'ckeditor'
 gem "figaro"
+gem "draper"
 # API
 gem 'grape'
 gem 'grape-entity'
