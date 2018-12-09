@@ -8,6 +8,12 @@ class Chitiethdcc < ApplicationRecord
   # validates :hopdongcc, presence: true
   validates :sanpham, presence: true
 
+  def avalaible_product
+    hopdongs = Chitiethdcc.arel_table
+    muahangs = Chitiethdmuahang.arel_table
+    hopdongs.join(muahangs).on(hopdongs[:sanpham_id].eq(muahangs[:sanpham_id]))
+  end
+
   # rails_admin
   # def display_name
   #   "#{self.dongia}"

@@ -1,9 +1,5 @@
 class ManageController < ApplicationController
-  before_action :set_manage, only: [:edit, :update, :show, :destory]
-
-  def new
-    # @hopdong = Hopdongmuahang.pending.all
-  end
+  before_action :set_manage, only: [ :update]
 
   def index
     @hopdong = Hopdongmuahang.includes(:chitiethdmuahangs).where(trangthaihd: "pending").decorate

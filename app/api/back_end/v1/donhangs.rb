@@ -4,6 +4,18 @@ module BackEnd::V1
     format :json
     prefix :api
     resource :donhangs do
+      before { user_authenticate! }
+      desc 'Return list of don hang'
+      get do
+        donhang = Hopdongmuahang.all
+        if donhang.present?
+          present :status, true
+          present donhang
+        else
+          present :status, false
+          present :message, "Không có sản phẩm"
+        end
+      end
       desc "don hang"
       params do 
         requires :id_khachhang, type:Integer
@@ -14,9 +26,10 @@ module BackEnd::V1
 
       post :donhang do
         don  = Hopdongmuahang.new(khachhang_id: params[:id_khachhang])
-        binding.pry
+        # binding.pry
         if don.save
           chitiet = Chitiethdmuahang.new(soluong: params[:so_luong], dongia: params[:don_gia], sanpham_id: params[:id_sanpham], hopdongmuahang_id: don.id)
+          
           present status: true   
         else
           present status: false

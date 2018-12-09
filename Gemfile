@@ -47,6 +47,8 @@ gem "paperclip"
 gem 'ckeditor'
 gem "figaro"
 gem "draper"
+gem 'rack-cors'
+# gem 'arel', '~> 9.0'
 # API
 gem 'grape'
 gem 'grape-entity'

@@ -1,11 +1,12 @@
- <nav class="sidebar" id="sidebar">
+<div class="wrapper" id="views-admin-dashboard-index">
+     <nav class="sidebar" id="sidebar">
     <div class="sidebar-header"> 
       <a href = / > 
         Zeny
       </a>
     </div>
     <ul class="list-unstyled components">
-      <li class="active">
+      <li>
         <%= link_to manage_index_path do %>
           Đơn hàng
           <div class="badge badge-light">
@@ -13,7 +14,7 @@
 							</div>
         <% end %>
       </li>
-      <li> <%= link_to 'Nhập hàng', new_hopdongcungcap_path %></li>
+      <li class="active"> <%= link_to 'Nhập hàng', new_hopdongcungcap_path %></li>
       <li><a href="#">Users</a></li>
       <li><a href="#">Portfolio</a></li>
       <li><a href="#">Contact</a></li>
@@ -45,3 +46,10 @@
         </div>
       </div>
     </nav>
+    <%= render "admins/shared/flash_message"%>
+    <h2>Nhập hàng</h2>
+    <div id="product-list">
+    
+    </div>
+  </div>
+  
