@@ -18,10 +18,10 @@ module BackEnd::V1
       desc 'Return a specific sanpham through id loaisp'
       route_param :id do
         get do
-          loaisp = Loaisp.find(params[:id]).sanphams
+          loaisp = Loaisp.find(params[:id])
           if loaisp.present?
             present :status, true
-            present loaisp, with: BackEnd::Entities::Sanpham
+            present loaisp, with: BackEnd::Entities::Loaisp
           else
             present :status, false
             present :message, "Không tìm thấy sản phẩm với loại sản phẩm tr"
