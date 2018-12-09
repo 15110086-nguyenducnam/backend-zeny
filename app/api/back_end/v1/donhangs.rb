@@ -29,7 +29,7 @@ module BackEnd::V1
         # binding.pry
         if don.save
           chitiet = Chitiethdmuahang.new(soluong: params[:so_luong], dongia: params[:don_gia], sanpham_id: params[:id_sanpham], hopdongmuahang_id: don.id)
-          
+          chitiet.save
           present status: true   
         else
           present status: false

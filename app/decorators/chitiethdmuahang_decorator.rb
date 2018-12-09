@@ -1,4 +1,4 @@
-class AnalysisDecorator < Draper::Decorator
+class ChitiethdmuahangDecorator < Draper::Decorator
   delegate_all
 
   # Define presentation-specific methods here. Helpers are accessed through
@@ -9,7 +9,7 @@ class AnalysisDecorator < Draper::Decorator
   #       object.created_at.strftime("%a %m/%d/%y")
   #     end
   #   end
-  def find_name(id)
+  def name(id)
     Sanpham.find(id).tensp
   end
 end

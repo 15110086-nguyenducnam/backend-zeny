@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_07_160638) do
+ActiveRecord::Schema.define(version: 2018_12_09_135854) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -112,8 +112,6 @@ ActiveRecord::Schema.define(version: 2018_12_07_160638) do
     t.string "ten"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "nhanhieu_id"
-    t.index ["nhanhieu_id"], name: "index_loaisps_on_nhanhieu_id"
   end
 
   create_table "nhaccs", force: :cascade do |t|
@@ -126,8 +124,11 @@ ActiveRecord::Schema.define(version: 2018_12_07_160638) do
 
   create_table "nhanhieus", force: :cascade do |t|
     t.string "ten"
+    t.text "mota"
+    t.bigint "loaisp_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["loaisp_id"], name: "index_nhanhieus_on_loaisp_id"
   end
 
   create_table "photos", force: :cascade do |t|
@@ -136,7 +137,7 @@ ActiveRecord::Schema.define(version: 2018_12_07_160638) do
     t.datetime "updated_at", null: false
     t.string "image_file_name"
     t.string "image_content_type"
-    t.integer "image_file_size"
+    t.bigint "image_file_size"
     t.datetime "image_updated_at"
     t.index ["sanpham_id"], name: "index_photos_on_sanpham_id"
   end
@@ -160,7 +161,7 @@ ActiveRecord::Schema.define(version: 2018_12_07_160638) do
   add_foreign_key "hopdongccs", "nhaccs"
   add_foreign_key "hopdongmuahangs", "khachhangs"
   add_foreign_key "khachhangs", "loaikhs"
-  add_foreign_key "loaisps", "nhanhieus"
+  add_foreign_key "nhanhieus", "loaisps"
   add_foreign_key "photos", "sanphams"
   add_foreign_key "sanphams", "loaisps"
 end

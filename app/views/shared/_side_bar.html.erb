@@ -8,13 +8,12 @@
       <li class="active">
         <%= link_to manage_index_path do %>
           Đơn hàng
-          <div class="badge badge-light">
+          <div class="badge badge-warning">
 								<%= @hopdong.size %>
 							</div>
         <% end %>
       </li>
-      <li> <%= link_to 'Nhập hàng', new_hopdongcungcap_path %></li>
-      <li><a href="#">Users</a></li>
+      <li><%= link_to 'Thống kê', analysis_index_path %></a></li>
       <li><a href="#">Portfolio</a></li>
       <li><a href="#">Contact</a></li>
     </ul>
@@ -38,7 +37,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" rel="nofollow" data-method="delete" href="/users/sign_out">
-                <i class="fa-sign-out"></i> Logout 
+                <i class="fa fa-sign-out"></i> Logout 
               </a>
             </li>
           </ul>

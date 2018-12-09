@@ -1,12 +1,12 @@
 <div class="wrapper" id="views-admin-dashboard-index">
- <nav class="sidebar" id="sidebar">
+     <nav class="sidebar" id="sidebar">
     <div class="sidebar-header"> 
       <a href = / > 
         Zeny
       </a>
     </div>
     <ul class="list-unstyled components">
-      <li >
+      <li>
         <%= link_to manage_index_path do %>
           Đơn hàng
           <div class="badge badge-warning">
@@ -46,9 +46,36 @@
       </div>
     </nav>
     <%= render "admins/shared/flash_message"%>
-    <h2>Nhập hàng</h2>
+    <h2>Đơn hàng</h2>
     <div id="product-list">
-    
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Tên SP</th>
+            <th>SL Đã bán</th>
+            <th>SL Nhập Vào</th>
+            <th>Còn Lại</th>
+          </tr>
+        </thead>
+          <tbody>
+          <% @product.each do |key, val| %>
+            <tr>
+              <td>
+                <%= name_analysis(key) %>
+              </td>
+              <td>
+                <%= total_product(key).to_i %>
+              </td>
+              <td>
+                <%= total_buy(key).to_i %>
+              </td>
+              <td>
+                <%= val.to_i %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
     </div>
   </div>
   

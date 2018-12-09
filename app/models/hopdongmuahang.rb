@@ -6,7 +6,7 @@ class Hopdongmuahang < ApplicationRecord
 
   # validates
   validates :khachhang, presence: true
-  enum trangthaihd: [:pending, :accept]
+  enum trangthaihd: [:pending, :accepted]
   # method
   def display_name
     "#{self.trangthaihd}"

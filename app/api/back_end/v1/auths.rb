@@ -64,7 +64,7 @@ module BackEnd::V1
       end
 
       post :signup do 
-         resource = User.new(params)
+         resource = Khachhang.new(params)
 
          if resource.save 
           present status: true   

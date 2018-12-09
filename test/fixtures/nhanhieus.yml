@@ -2,6 +2,10 @@
 
 one:
   ten: MyString
+  mota: MyText
+  loaisp: one
 
 two:
   ten: MyString
+  mota: MyText
+  loaisp: two

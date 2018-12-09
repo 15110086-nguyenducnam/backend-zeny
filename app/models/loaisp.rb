@@ -1,7 +1,7 @@
 class Loaisp < ApplicationRecord
   # association
   has_many :sanphams, inverse_of: :loaisp
-  belongs_to :nhanhieu
+  has_mana :nhanhieu
   
   # validate
   validates :ten, presence: true
