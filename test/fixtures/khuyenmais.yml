@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sanpham: one
+  loaisp: one
+  nhanhieu: one
+  ngaybd: 2018-12-10 22:13:11
+  ngaykt: 2018-12-10 22:13:11
+
+two:
+  sanpham: two
+  loaisp: two
+  nhanhieu: two
+  ngaybd: 2018-12-10 22:13:11
+  ngaykt: 2018-12-10 22:13:11

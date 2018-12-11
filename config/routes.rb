@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/dashboard', as: 'rails_admin'
   resources :manage, only: [:index, :update]
   resources :analysis
+  resources :khuyenmais
   resources :hopdongcungcaps do
     resources :chitiethdcungcap
   end

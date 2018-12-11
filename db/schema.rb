@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_09_135854) do
+ActiveRecord::Schema.define(version: 2018_12_10_151311) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -101,6 +101,15 @@ ActiveRecord::Schema.define(version: 2018_12_09_135854) do
     t.index ["reset_password_token"], name: "index_khachhangs_on_reset_password_token", unique: true
   end
 
+  create_table "khuyenmais", force: :cascade do |t|
+    t.bigint "sanpham_id"
+    t.datetime "ngaybd"
+    t.datetime "ngaykt"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["sanpham_id"], name: "index_khuyenmais_on_sanpham_id"
+  end
+
   create_table "loaikhs", force: :cascade do |t|
     t.string "tenloaikh"
     t.float "chietkhau"
@@ -161,6 +170,7 @@ ActiveRecord::Schema.define(version: 2018_12_09_135854) do
   add_foreign_key "hopdongccs", "nhaccs"
   add_foreign_key "hopdongmuahangs", "khachhangs"
   add_foreign_key "khachhangs", "loaikhs"
+  add_foreign_key "khuyenmais", "sanphams"
   add_foreign_key "nhanhieus", "loaisps"
   add_foreign_key "photos", "sanphams"
   add_foreign_key "sanphams", "loaisps"

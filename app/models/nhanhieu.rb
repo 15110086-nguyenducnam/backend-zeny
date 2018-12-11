@@ -10,6 +10,9 @@ class Nhanhieu < ApplicationRecord
     field :ten do
       label "Tên"
     end
+    field :loaisp do
+      label "Tên"
+    end
     field :created_at do
         read_only true
       end

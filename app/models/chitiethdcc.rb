@@ -20,7 +20,7 @@ class Chitiethdcc < ApplicationRecord
   # end
   rails_admin do
     label "Chi tiết hợp đồng cung cấp"
-    label_plural "Chi tiết hợp đồng cung cấp"
+    label_plural "Nhập hàng"
     
     field :id do
       read_only true

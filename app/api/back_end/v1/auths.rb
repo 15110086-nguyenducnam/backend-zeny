@@ -54,23 +54,22 @@ module BackEnd::V1
       desc "API for signup"
       params do 
         requires :email, type:String
-        requires :password, type:String
-        requires :password_confirmation, type:String
-        # requires :profile_attributes,type:Hash do
-        #   requires :name,type:String
-        #   requires :phone,type:String
-        #   requires :address,type:String  
-        # end
+        requires :password, type:Integer
+        requires :ho, type:String
+        requires :ten, type:String
+        requires :sdt, type:Integer
+        requires :dateofbirth, type:Date
+        requires :diachi, type:String
       end
 
       post :signup do 
          resource = Khachhang.new(params)
-
          if resource.save 
           present status: true   
+          present resource, with: BackEnd::Entities::Khachhang
         else 
-            
           present status: false 
+          present message: resource.errors.messages
          end 
       end 
     end
