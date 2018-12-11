@@ -46,14 +46,32 @@
       </div>
     </nav>
     <%= render "admins/shared/flash_message"%>
-    <h2>Chương Trình Khuyến Mãi</h2>
+    <h2>Sản phẩm đang khuyến mãi</h2>
     <div id="product-list">
-      <%= simple_form_for @khuyenmai do |f| %>
-        <%= f.association :loaisp,label_method: :ten, value_method: :id, include_blank: false, input_html: {class: 'form-control' } %>
-        <%= f.input :ngaybd, input_html: {class: 'form-control' } %>
-        <%= f.input :ngaykt, input_html: {class: 'form-control' } %>
-        <%= f.button :submit, 'Tiếp Theo', class: 'btn btn-primary btn-sm mt-3' %>
-      <% end %>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Tên SP</th>
+            <th>Thời gian BD</th>
+            <th>Thời gian KT</th>
+          </tr>
+        </thead>
+          <tbody>
+          <% @khuyenmai.each do |khuyenmai| %>
+            <tr>
+              <td>
+                <%= khuyenmai.sanpham.tensp %>
+              </td>
+              <td>
+                <%= khuyenmai.ngaybd.strftime("%d-%m-%Y %H:%M") %>
+              </td>
+              <td>
+                <%= khuyenmai.ngaykt.strftime("%d-%m-%Y %H:%M ") %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
     </div>
   </div>
   
