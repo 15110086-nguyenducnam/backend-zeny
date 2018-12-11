@@ -6,8 +6,9 @@ module BackEnd::Entities
     expose :ho
     expose :sdt
     expose :diachi
-
-    # expose :sanphams, using: BackEnd::Entities::Sanpham
+    expose :api_key, using: BackEnd::Entities::ApiKey do |api, opts|
+      api.api_keys.last
+    end
   end
 
   class UserNoAPIKey < Khachhang

@@ -16,7 +16,7 @@ module TotalProduct
           SELECT chitiethdccs.sanpham_id as id, sum(chitiethdccs.soluong) as tongmua
           FROM chitiethdccs
           GROUP BY chitiethdccs.sanpham_id) as cungcap ON cungcap.id = chitiet.id
-        WHERE chitiet.id = #{@product_id}
+        WHERE cungcap.id = #{@product_id}
       )
       SQL
       ActiveRecord::Base.connection.execute(sql).to_a

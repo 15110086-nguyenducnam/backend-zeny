@@ -26,6 +26,8 @@ module BackEnd::V1
 
       post :donhang do
         @sanpham = TotalProduct::CheckExit.new(params[:id_sanpham]).call
+        @sanpham[0]["tongban"] = 0 if @sanpham[0]["tongban"].blank?
+        # binding.pry
         if @sanpham[0]["tongmua"] - @sanpham[0]["tongban"] - params[:so_luong] >= 0
           don  = Hopdongmuahang.new(khachhang_id: params[:id_khachhang])
           if don.save
