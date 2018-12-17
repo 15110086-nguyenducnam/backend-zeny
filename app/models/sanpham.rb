@@ -12,6 +12,7 @@ class Sanpham < ApplicationRecord
   validates :loaisp, :tensp, :photos, presence: true
   accepts_nested_attributes_for :photos
   
+
   # rails_admin
   def display_name
     "#{self.tensp}"

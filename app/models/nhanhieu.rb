@@ -1,6 +1,9 @@
 class Nhanhieu < ApplicationRecord
-  belongs_to :loaisp
+  belongs_to :loaisp, inverse_of: :nhanhieu
 
+  def display_name
+    "#{self.ten}"
+  end
   rails_admin do
     label "Nhã Hiệu"
     label_plural "Nhãn hiệu"

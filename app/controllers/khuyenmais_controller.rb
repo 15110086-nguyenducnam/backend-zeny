@@ -4,6 +4,8 @@ class KhuyenmaisController < ApplicationController
   def index
     @hopdong = Hopdongmuahang.includes(:chitiethdmuahangs).where(trangthaihd: "pending").decorate
     @khuyenmai = Khuyenmai.where("ngaybd >= ? ", DateTime.now)
+    @sapkhuyenmai = Khuyenmai.where("ngaybd >?", DateTime.now)
+    @dakhuyenmai = Khuyenmai.where("ngaykt <?", DateTime.now)
   end
 
   def create

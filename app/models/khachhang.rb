@@ -31,6 +31,9 @@ class Khachhang < ApplicationRecord
     field :email do
       label "Email"
     end
+    field :password do
+      label "Mật khẩu"
+    end
     field :diachi do
       label "Dia Chi"
     end

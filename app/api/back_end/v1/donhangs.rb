@@ -4,6 +4,7 @@ module BackEnd::V1
     format :json
     prefix :api
     resource :donhangs do
+      # return all don hang
       before { user_authenticate! }
       desc 'Return list of don hang'
       get do
@@ -17,6 +18,7 @@ module BackEnd::V1
         end
       end
       desc "don hang"
+      # get params from ui, therefore post donhang
       params do 
         requires :id_khachhang, type:Integer
         requires :so_luong, type:Integer
@@ -25,6 +27,7 @@ module BackEnd::V1
       end
 
       post :donhang do
+        # check product exit
         @sanpham = TotalProduct::CheckExit.new(params[:id_sanpham]).call
         @sanpham[0]["tongban"] = 0 if @sanpham[0]["tongban"].blank?
         # binding.pry

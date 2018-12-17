@@ -46,32 +46,77 @@
       </div>
     </nav>
     <%= render "admins/shared/flash_message"%>
-    <h2>Sản phẩm đang khuyến mãi</h2>
+    <h2>Khuyến mãi</h2>
     <div id="product-list">
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th>Tên SP</th>
-            <th>Thời gian BD</th>
-            <th>Thời gian KT</th>
-          </tr>
-        </thead>
-          <tbody>
-          <% @khuyenmai.each do |khuyenmai| %>
-            <tr>
-              <td>
-                <%= khuyenmai.sanpham.tensp %>
-              </td>
-              <td>
-                <%= khuyenmai.ngaybd.strftime("%d-%m-%Y %H:%M") %>
-              </td>
-              <td>
-                <%= khuyenmai.ngaykt.strftime("%d-%m-%Y %H:%M ") %>
-              </td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#home">Đang khuyến mãi</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#menu1">Đã khuyến mãi</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#menu2">Sắp khuyến mãi</a>
+        </li>
+      </ul>
+<!-- Tab panes -->
+      <div class="tab-content">
+        <div class="tab-pane container active" id="home">
+          <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Tên SP</th>
+                  <th>Thời gian BD</th>
+                  <th>Thời gian KT</th>
+                </tr>
+              </thead>
+                <tbody>
+                <% @khuyenmai.each do |khuyenmai| %>
+                  <tr>
+                    <td>
+                      <%= khuyenmai.sanpham.tensp %>
+                    </td>
+                    <td>
+                      <%= khuyenmai.ngaybd.strftime("%d-%m-%Y %H:%M") %>
+                    </td>
+                    <td>
+                      <%= khuyenmai.ngaykt.strftime("%d-%m-%Y %H:%M ") %>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+        </div>
+        <div class="tab-pane container fade" id="menu1">
+          <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Tên SP</th>
+                  <th>Thời gian BD</th>
+                  <th>Thời gian KT</th>
+                </tr>
+              </thead>
+                <tbody>
+                <% @dakhuyenmai.each do |khuyenmai| %>
+                  <tr>
+                    <td>
+                      <%= khuyenmai.sanpham.tensp %>
+                    </td>
+                    <td>
+                      <%= khuyenmai.ngaybd.strftime("%d-%m-%Y %H:%M") %>
+                    </td>
+                    <td>
+                      <%= khuyenmai.ngaykt.strftime("%d-%m-%Y %H:%M ") %>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+        </div>
+        <div class="tab-pane container fade" id="menu2">...</div>
+      </div>
     </div>
   </div>
+  
   

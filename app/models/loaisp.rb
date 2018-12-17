@@ -1,6 +1,6 @@
 class Loaisp < ApplicationRecord
   # association
-  has_many :sanphams, inverse_of: :loaisp
+  has_many :sanphams
   has_many :nhanhieu
   
   # validate
