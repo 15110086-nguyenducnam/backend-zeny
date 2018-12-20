@@ -47,6 +47,9 @@ gem "paperclip"
 gem 'ckeditor'
 gem "draper"
 gem 'rack-cors'
+# chart 
+gem "chartkick"
+gem 'groupdate'
 # gem 'arel', '~> 9.0'
 # API
 gem 'grape'

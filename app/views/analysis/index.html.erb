@@ -49,77 +49,54 @@
     <%= render "admins/shared/flash_message"%>
     <h2>Đơn hàng</h2>
     <div id="product-list">
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th>Tên SP</th>
-            <th>SL Đã bán</th>
-            <th>SL Nhập Vào</th>
-            <th>Còn Lại</th>
-          </tr>
-        </thead>
-          <tbody>
-          <% @product.each do |key, val| %>
-            <tr>
-              <td>
-                <%= name_analysis(key) %>
-              </td>
-              <td>
-                <%= total_product(key).to_i %>
-              </td>
-              <td>
-                <%= total_buy(key).to_i %>
-              </td>
-              <td>
-                <%= val.to_i %>
-              </td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-      <div id="chart_div">dsadasd</div>
-  </div>
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#home">Thông tin hàng</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#menu1">Sô lượng bán ra trong tuần</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane container active" id="home">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Tên SP</th>
+                <th>SL Đã bán</th>
+                <th>SL Nhập Vào</th>
+                <th>Còn Lại</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @product.each do |key, val| %>
+                <tr>
+                  <td>
+                    <%= name_analysis(key) %>
+                  </td>
+                  <td>
+                    <%= total_product(key).to_i %>
+                  </td>
+                  <td>
+                    <%= total_buy(key).to_i %>
+                  </td>
+                  <td>
+                    <%= val.to_i %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>  
+        <div class="tab-pane container fade" id="menu1">
+          <%= column_chart Chitiethdmuahang.group_by_day_of_week(:created_at, format: "%a").count %>
+          
+        </div>
+        <div class="tab-pane container fade" id="menu2">            
 
-   <script type="text/javascript">
-
-      // Load the Visualization API and the corechart package.
-      google.charts.load('current', {'packages':['corechart']});
-
-      // Set a callback to run when the Google Visualization API is loaded.
-      google.charts.setOnLoadCallback(drawChart);
-
-      // Callback that creates and populates a data table,
-      // instantiates the pie chart, passes in the data and
-      // draws it.
-      function drawChart() {
-          var result = [];
-        $.ajax({
-          url: 'analysis/get_chart',
-          type: "GET",
-          data: { sanpham: "nam"},
-          success: function (json_data) {
-            
-            console.log(json_data)
-            for(var i in json_data)
-              result.push([i.id, i]);
-          }
-        });
-        //console.log(result)
-        // Create the data table.
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
-        
-        data.addRows(result);
-
-        // Set chart options
-        var options = {'title':'How Much Pizza I Ate Last Night',
-                       'width':400,
-                       'height':300};
-
-        // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-      }
-    </script>
+        </div>
+      </div>
+    </div>  
+  </div>  
+</div>
+      
