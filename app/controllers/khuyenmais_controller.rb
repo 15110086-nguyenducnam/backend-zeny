@@ -1,5 +1,6 @@
 class KhuyenmaisController < ApplicationController
   # before_action :check_day, only: [ :update, :create]
+  before_action :authenticate_admin!
 
   def index
     @hopdong = Hopdongmuahang.includes(:chitiethdmuahangs).where(trangthaihd: "pending").decorate
@@ -16,7 +17,6 @@ class KhuyenmaisController < ApplicationController
       redirect_to khuyenmais_path
     else
       flash.now[:danger] = @khuyenmai.errors.full_messages.join(', ')
-      # binding.pry
       redirect_to khuyenmais_path
     end
   end

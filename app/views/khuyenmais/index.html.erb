@@ -114,7 +114,32 @@
               </tbody>
             </table>
         </div>
-        <div class="tab-pane container fade" id="menu2">...</div>
+        <div class="tab-pane container fade" id="menu2">
+          <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Tên SP</th>
+                  <th>Thời gian BD</th>
+                  <th>Thời gian KT</th>
+                </tr>
+              </thead>
+                <tbody>
+                <% @sapkhuyenmai.each do |khuyenmai| %>
+                  <tr>
+                    <td>
+                      <%= khuyenmai.sanpham.tensp %>
+                    </td>
+                    <td>
+                      <%= khuyenmai.ngaybd.strftime("%d-%m-%Y %H:%M") %>
+                    </td>
+                    <td>
+                      <%= khuyenmai.ngaykt.strftime("%d-%m-%Y %H:%M ") %>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+        </div>
       </div>
     </div>
   </div>

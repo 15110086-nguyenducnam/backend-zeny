@@ -1,5 +1,6 @@
 class ManageController < ApplicationController
   before_action :set_manage, only: [ :update]
+  before_action :authenticate_admin!
 
   def index
     @hopdong = Hopdongmuahang.includes(:chitiethdmuahangs).where(trangthaihd: "pending").decorate
