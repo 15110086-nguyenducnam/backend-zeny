@@ -7,6 +7,7 @@ module BackEnd::V1
       desc 'Return list of sanphams'
       get do
         sanphams = Sanpham.all
+        sanphams = Sanpham.ransack(tensp_cont: params[:q]).result(distinct: true) if params[:q].present?
         if sanphams.present?
           present :status, true
           present sanphams, with: BackEnd::Entities::Sanpham

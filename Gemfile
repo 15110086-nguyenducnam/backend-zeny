@@ -47,6 +47,8 @@ gem "paperclip"
 gem 'ckeditor'
 gem "draper"
 gem 'rack-cors'
+# search
+gem 'ransack'
 # chart 
 gem "chartkick"
 gem 'groupdate'

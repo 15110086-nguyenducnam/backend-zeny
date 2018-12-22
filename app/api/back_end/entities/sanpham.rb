@@ -3,7 +3,6 @@ module BackEnd::Entities
     root "sanphams", "sanpham"
     expose :id
     expose :tensp
-    # expose :thongso
     expose :mota
     expose :photos, using: BackEnd::Entities::Photo
     expose :banggium, as: :gia, using: BackEnd::Entities::Banggium do |gia, opts|
