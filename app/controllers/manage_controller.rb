@@ -8,7 +8,7 @@ class ManageController < ApplicationController
 
   def update
     if @hopdong.pending!
-      @hopdong.accept!
+      @hopdong.accepted!
       flash[:notice] = "Cập nhật thành công...."
     else
       flash[:notice] = "Cập nhật thất bại....."

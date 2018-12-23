@@ -1,3 +1,4 @@
+require 'grape-swagger'
 module BackEnd
  class Base < Grape::API
   helpers do
@@ -9,6 +10,9 @@ module BackEnd
   mount BackEnd::V1::Khachhangs
   mount BackEnd::V1::Donhangs
   mount BackEnd::V1::Khuyenmais
+  add_swagger_documentation
+  
+  
   # mount BackEnd::V1::Nhaccs
  end
 end

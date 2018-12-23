@@ -59,6 +59,7 @@ gem 'grape-entity'
 gem 'grape-swagger',              '~> 0.26.1'
 gem 'grape-swagger-rails',        '~> 0.3.0'
 gem 'grape_on_rails_routes'
+gem 'swagger-docs'
 # gem 'rails_admin_dropzone', '~> 1.0', '>= 1.0.8'
 
 group :development, :test do
